@@ -43,10 +43,13 @@ export const fetchProducts = (value)=>{
         dispatch(fetchProductsRequest())
         axios.get(`http://localhost:3001/api/search?q=${value}`)
         .then(response=>{
+            response.data.length > 0?
             dispatch(fetchProductsSuccess(response.data))
+            :
+            dispatch(fetchProductsError('Página no encontrada. Verifique que los datos ingresados ​​sean correctos. De lo contrario, el producto solicitado no está en nuestra base de datos.'))
         })
         .catch(err=>{
-            dispatch(fetchProductsError('Page not found. Possibly the entered parameters are not correct or we do not have records in our database of the requested product.'))
+            console.log(err)
         })
     }
 }

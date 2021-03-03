@@ -8,12 +8,13 @@ import { fetchProducts } from "./actions/actionsProducts";
 
 
 
+
 const store = createStore(rootReducers,
     
     composeWithDevTools(
     applyMiddleware(thunk)
 ))
 
-store.dispatch(fetchProducts('---------'))
+
 
 export { store }

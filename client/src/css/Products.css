@@ -1,0 +1,15 @@
+.loading{
+    margin: 20px auto;
+    font-size: 32px;
+    color:rgb(23, 184, 84);
+    display: flex;
+    justify-content: center;
+}
+
+.error{
+    margin: 20px auto;
+    font-size: 26px;
+    color:rgb(192, 29, 8);
+    display: flex;
+    justify-content: center;
+}
