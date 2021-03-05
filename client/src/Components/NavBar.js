@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import "../css/NavBar.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { fetchProducts } from '../Redux/actions/actionsProducts';
 
-
-function NavBar({ onSearch }) {
-
+function NavBar() {
+  const history = useHistory()
+  const dispatch = useDispatch()
   const [query, setQuery] = useState("");
   const handleInputChange = (e) => (
     setQuery(e.target.value)
   )
 
-  
+  const onSearch = (query)=>{
+    history.push(`/search?q=${query}`)
+    dispatch(fetchProducts(query))  
+     
+  }
 
   return (
     <div>

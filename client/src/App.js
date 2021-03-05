@@ -2,15 +2,14 @@
 import './App.css';
 import { store } from './Redux/store';
 import { Provider } from 'react-redux'
-
-import { Home } from './Components/Home';
+import { Routes } from './Components/Routes';
 
 
 function App() {
   
   return (
     <Provider store={store}>
-      <Home/>
+      <Routes/>
     </Provider>
   );
 }

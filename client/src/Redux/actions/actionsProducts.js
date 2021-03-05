@@ -1,22 +1,13 @@
 import axios from 'axios'
 
-export const DETAILS_PRODUCT = 'DETAILS_PRODUCT'
+
 export const FETCH_PRODUCTS_REQUEST = 'FETCH_PRODUCTS_REQUEST'
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS'
 export const FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR'
+export const FETCH_DETAILS_REQUEST = 'FETCH_DETAILS_REQUEST'
+export const FETCH_DETAILS_SUCCESS = 'FETCH_DETAILS_SUCCESS'
+export const FETCH_DETAILS_ERROR = 'FETCH_DETAILS_ERROR'
 
-
-export const detailsProduct = (id)=>{
-    return (dispatch)=>{
-        axios.get(`http://localhost:3001/api/items/${id}`)
-        .then(response =>{
-            dispatch({
-                type:DETAILS_PRODUCT,
-                payload: response.data
-            })
-        })
-    }
-}
 
 export const fetchProductsRequest = ()=>{
     return {
@@ -51,5 +42,35 @@ export const fetchProducts = (value)=>{
         .catch(err=>{
             console.log(err)
         })
+    }
+}
+
+export const fetchDetailsRequest = ()=>{
+    return {
+        type: FETCH_DETAILS_REQUEST
+    }
+}
+
+export const fetchDetailsSuccess = (results)=>{
+    return {
+        type: FETCH_DETAILS_SUCCESS,
+        payload: results,
+    }
+}
+
+export const fetchDetailsError = (error)=>{
+    return{
+        type:FETCH_DETAILS_ERROR,
+        payload: error
+    }
+}
+export const fetchDetailsProduct = (id)=>{
+    return (dispatch)=>{
+        dispatch(fetchDetailsRequest())
+        axios.get(`http://localhost:3001/api/items/${id}`)
+        .then(response =>{
+            dispatch(fetchDetailsSuccess(response.data))
+        })
+        .catch(err=>dispatch(fetchDetailsError('No podemos conectar con la Base de datos. Verifique su conexion')))
     }
 }

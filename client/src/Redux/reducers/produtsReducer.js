@@ -1,7 +1,7 @@
-import { DETAILS_PRODUCT, FETCH_PRODUCTS_ERROR, FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS } from "../actions/actionsProducts"
+import { FETCH_DETAILS_ERROR, FETCH_DETAILS_REQUEST, FETCH_DETAILS_SUCCESS, FETCH_PRODUCTS_ERROR, FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS } from "../actions/actionsProducts"
 
 const initialState = {
-    detalis:{},
+    details:{},
     loading:false,
     products:[],
     error:''
@@ -10,30 +10,45 @@ const initialState = {
 export const productsReducer = (state=initialState,actions)=>{
 
     switch(actions.type){
-        case DETAILS_PRODUCT:
-            return{
-                detalis: actions.payload,
-                loading:false,
-                products:[],
-                error:''
-            }
+        
         case FETCH_PRODUCTS_REQUEST:
             return{
-                detalis: {},
+                details: {},
                 loading:true,
                 products:[],
                 error:''
             }
         case FETCH_PRODUCTS_SUCCESS:
             return{
-                detalis: {},
+                details: {},
                 loading:false,
                 products:actions.payload,
                 error:''
             }
         case FETCH_PRODUCTS_ERROR:
             return{
-                detalis: {},
+                details: {},
+                loading:false,
+                products:[],
+                error:actions.payload
+            }
+        case FETCH_DETAILS_REQUEST:
+            return{
+                details: {},
+                loading:true,
+                products:[],
+                error:''
+            }
+        case FETCH_DETAILS_SUCCESS:
+            return{
+                details: actions.payload,
+                loading:false,
+                products:[],
+                error:''
+            }
+        case FETCH_DETAILS_ERROR:
+            return{
+                details: {},
                 loading:false,
                 products:[],
                 error:actions.payload
