@@ -13,7 +13,7 @@ function NavBar() {
   )
 
   const onSearch = (query)=>{
-    history.push(`/search?q=${query}`)
+    history.push(`/search/${query}`)
     dispatch(fetchProducts(query))  
      
   }
@@ -31,11 +31,11 @@ function NavBar() {
                      
         }}>
            <input onChange={handleInputChange} name="query" />
-           <Link to='/api'>
+           
            <button>
               <img src="https://icongr.am/clarity/search.svg?size=16&color=c0c0c0" alt="" />
            </button>
-           </Link>
+           
          </form>
         
       </div>
