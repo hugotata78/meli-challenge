@@ -2,7 +2,7 @@
 import './App.css';
 import { store } from './Redux/store';
 import { Provider } from 'react-redux'
-import { Routes } from './Components/Routes';
+import { Routes } from './Routes';
 
 
 function App() {

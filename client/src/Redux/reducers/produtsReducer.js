@@ -13,44 +13,44 @@ export const productsReducer = (state=initialState,actions)=>{
         
         case FETCH_PRODUCTS_REQUEST:
             return{
-                details: {},
+                ...state,
                 loading:true,
                 products:[],
                 error:''
             }
         case FETCH_PRODUCTS_SUCCESS:
             return{
-                details: {},
+                ...state,
                 loading:false,
                 products:actions.payload,
                 error:''
             }
         case FETCH_PRODUCTS_ERROR:
             return{
-                details: {},
+                ...state,
                 loading:false,
                 products:[],
                 error:actions.payload
             }
         case FETCH_DETAILS_REQUEST:
             return{
+                ...state,
                 details: {},
                 loading:true,
-                products:[],
                 error:''
             }
         case FETCH_DETAILS_SUCCESS:
             return{
+                ...state,
                 details: actions.payload,
                 loading:false,
-                products:[],
                 error:''
             }
         case FETCH_DETAILS_ERROR:
             return{
+                ...state,
                 details: {},
                 loading:false,
-                products:[],
                 error:actions.payload
             }
         default:{

@@ -32,7 +32,7 @@ export const fetchProductsError = (error)=>{
 export const fetchProducts = (value)=>{
     return (dispatch)=>{
         dispatch(fetchProductsRequest())
-        axios.get(`http://localhost:3001/api/search?q=${value}`)
+        axios.get(`http://localhost:3001/search?q=${value}`)
         .then(response=>{
             response.data.length > 0?
             dispatch(fetchProductsSuccess(response.data))
@@ -67,7 +67,7 @@ export const fetchDetailsError = (error)=>{
 export const fetchDetailsProduct = (id)=>{
     return (dispatch)=>{
         dispatch(fetchDetailsRequest())
-        axios.get(`http://localhost:3001/api/items/${id}`)
+        axios.get(`http://localhost:3001/items/${id}`)
         .then(response =>{
             dispatch(fetchDetailsSuccess(response.data))
         })
