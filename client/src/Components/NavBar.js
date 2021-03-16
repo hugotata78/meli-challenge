@@ -31,11 +31,9 @@ function NavBar() {
                      
         }}>
            <input onChange={handleInputChange} name="query" />
-           
            <button>
               <img src="https://icongr.am/clarity/search.svg?size=16&color=c0c0c0" alt="" />
-           </button>
-           
+           </button>           
          </form>
         
       </div>

@@ -37,7 +37,7 @@ export const fetchProducts = (value)=>{
             response.data.length > 0?
             dispatch(fetchProductsSuccess(response.data))
             :
-            dispatch(fetchProductsError('Página no encontrada. Verifique que los datos ingresados ​​sean correctos. De lo contrario, el producto solicitado no está en nuestra base de datos.'))
+            dispatch(fetchProductsError('Producto no encontrado'))
         })
         .catch(err=>{
             console.log(err)

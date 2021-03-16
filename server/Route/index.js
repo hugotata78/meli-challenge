@@ -5,7 +5,7 @@ const { response } = require('express')
 
 router.get('/search',(req,res)=>{
     axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${req.query.q}`)
-    .then(response=> res.json(response.data.results))
+    .then(response=> res.json(response.data.resultsls))
     .catch(err=>console.log(err))
 })
 

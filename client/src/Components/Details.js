@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/details.css'
 
 export const Details = ({ details })=>{
     
@@ -9,7 +10,7 @@ export const Details = ({ details })=>{
         })
     return(
         
-            <div>
+            <div className='details'>
                 <h1>{details.title}</h1>
                 <img className="imgProduct" src={img} alt="" />
                 <h2>

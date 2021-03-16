@@ -20,10 +20,12 @@
   
   input {
     border: none;
+    border-collapse: collapse;
     height: 100%;
     background-color: transparent;
     min-width: 400px;
     padding: 0 6px;
+    box-sizing: border-box;
     
   }
   

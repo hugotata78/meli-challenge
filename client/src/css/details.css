@@ -1,0 +1,12 @@
+.details{
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .details{
+      padding: 30px auto;
+    }
+    .imgProduct{
+        width: auto;
+    }
+  }
