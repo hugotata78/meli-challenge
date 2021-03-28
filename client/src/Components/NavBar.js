@@ -13,7 +13,7 @@ function NavBar() {
   )
 
   const onSearch = (query)=>{
-    history.push(`/search/${query}`)
+    history.push(`/search?q=${query}`)
     dispatch(fetchProducts(query))  
      
   }
