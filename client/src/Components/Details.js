@@ -3,11 +3,12 @@ import '../css/details.css'
 
 export const Details = ({ details })=>{
     
-    const img = details.thumbnail && details.thumbnail.replace('-I.jpg','-B.jpg')
+    const img = details.thumbnail && details.thumbnail.replace('-I.jpg','-O.jpg')
     const price = details.price && details.price.toLocaleString("es-AR", {
         style: "currency",
         currency: "ARS"
         })
+        console.log(details.attributes)
     return(
         
             <div className='details'>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../css/ListProducts.css'
+import { CardProduct } from './CardProduct'
 
 
 export const ListProducts = ({ products }) =>{
@@ -8,23 +9,15 @@ export const ListProducts = ({ products }) =>{
    
     return(
         
-            <div>
-            {products.map((result) => (
-                
-            <Link key={result.id} to={`/items/${result.id}`} className="item" >
-                <img className="imagen" src={result.thumbnail.replace('I.jpg','B.jpg')} alt="" />
-                <div className="meta">
-                <h3>{result.title}</h3>
-                <h4>
-                {result.price.toLocaleString("es-AR", {
-                style: "currency",
-                currency: "ARS"
-                })}
-                </h4>
+            <div className='container mt-3'>
+                <div className='row'>
+                  {products.map((result) =>{
+                      return(
+                          <CardProduct result={result} key={result.id}/>
+                      )
+                  } )}
+                </div>
             </div>
-            </Link>
-            ))}
-        </div>
         
     )
 }
