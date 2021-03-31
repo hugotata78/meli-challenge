@@ -8,10 +8,13 @@ export const ListProducts = ({ products }) =>{
     const header = products.filters && products.filters[0].values[0].path_from_root.map(p=>p.name).join('> ')
     const store = products.available_filters.filter(p => p.id === 'official_store')
     const location = products.available_filters.filter(p=> p.id === 'state')
-    const model = products.available_filters.filter(p=> p.id === 'MODEL')
+    const model = products.available_filters.filter(p=> p.id === 'MODEL') 
     const version = products.available_filters.filter(p=> p.id === 'SHORT_VERSION')
     const price = products.available_filters.filter(p=> p.id === 'price')
-   
+    products.available_filters.map(p=>{
+        console.log(p.name)
+        p.values.map(v=>console.log(v.name, v.results))
+    })
     return(
            
             <div className='mt-3'>
