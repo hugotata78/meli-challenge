@@ -3,7 +3,7 @@ import { FETCH_DETAILS_ERROR, FETCH_DETAILS_REQUEST, FETCH_DETAILS_SUCCESS, FETC
 const initialState = {
     details:{},
     loading:false,
-    products:[],
+    products:{},
     error:''
 }
 

@@ -13,11 +13,14 @@ export const Products = ()=>{
     const error = useSelector(state => state.productsReducer.error)
     
     return(
-        <div className='products'>
+        <div>
             <NavBar/>
+            <div className='products'>
+            
             {loading && <span className='loading'>Cargando ...</span>}
-            {products.length > 0 && <ListProducts products={products}/>}
+            {products.results && products.results.length > 0 && <ListProducts products={products}/>}
             {error && <span className='error'>{error}</span>}
+        </div>
         </div>
     )
 }

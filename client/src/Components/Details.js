@@ -8,7 +8,7 @@ export const Details = ({ details })=>{
         style: "currency",
         currency: "ARS"
         })
-        console.log(details.attributes)
+        
     return(
         
             <div className='details p-5'>

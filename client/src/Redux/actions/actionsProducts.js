@@ -34,7 +34,7 @@ export const fetchProducts = (value)=>{
         dispatch(fetchProductsRequest())
         axios.get(`http://localhost:3001/search?q=${value}`)
         .then(response=>{
-            response.data.length > 0?
+            response.data.results.length > 0?
             dispatch(fetchProductsSuccess(response.data))
             :
             dispatch(fetchProductsError('Producto no encontrado'))

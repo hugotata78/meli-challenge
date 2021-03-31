@@ -32,8 +32,8 @@
   
 
   .card-product{
-    height: 350px;
-    width: 280px;
+    height: 320px;
+    width: 260px;
     box-sizing: border-box;
     border-radius: 10px;
     
@@ -42,7 +42,7 @@
   .images{
     object-fit: cover;
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
     max-height: 175px;
   }
   .card-product .card-body{
