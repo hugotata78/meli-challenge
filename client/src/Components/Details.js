@@ -11,13 +11,19 @@ export const Details = ({ details })=>{
         console.log(details.attributes)
     return(
         
-            <div className='details'>
-                <h1>{details.title}</h1>
-                <img className="imgProduct" src={img} alt="" />
-                <h2>
-                {price}
-                </h2>
-        
+            <div className='details p-5'>
+               <div className='container p-5 bg-light'>
+                   <div className='row p-3'>
+                       <div className='col-8 d-flex justify-content-center align-items-center'>
+                         <img className="img-fluid w-100" src={img} alt="" />
+                       </div>
+                       <div className='col-4 p-3 border rounded'>
+                         <h3>{details.title}</h3>
+                         <p>{price}</p>
+                       </div>
+                   </div>
+                   
+               </div>        
             </div>
            
     )

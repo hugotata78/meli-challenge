@@ -29,19 +29,21 @@
     font-weight: normal;
   }
   
-  .imagen {
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 0;
-  }
+  
 
   .card-product{
     height: 350px;
-    width: 250px;
+    width: 280px;
     box-sizing: border-box;
     border-radius: 10px;
     
+  }
+
+  .images{
+    object-fit: cover;
+    width: 100%;
+    max-width: 280px;
+    max-height: 175px;
   }
   .card-product .card-body{
     padding: 10px;
