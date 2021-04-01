@@ -19,7 +19,8 @@ export const CardProduct = ({result})=>{
                 <div className="card-body d-inline-block">
                     <h6 className="m-0 text-dark font-weight-bold">{result.currency_id}$ {result.price}
                     </h6>
-                    <span className='text-secondary'>{year[0].value_name} | {km[0].value_name}</span>
+                    {year.length ? <span className='text-secondary'>{ year[0].value_name }|</span>: <span></span>} 
+                    {km.length? <span> {km[0].value_name}</span>: <span></span>}
                     <p className="text-dark">{result.title}</p>
                     <span className="text-secondary">{result.location && result.location.state.name}</span>
                 </div>
